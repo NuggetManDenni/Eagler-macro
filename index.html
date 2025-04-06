@@ -6,7 +6,7 @@
     <title>Auto Clicker</title>
     <style>
         body {
-            background-image: url('https://wallpaperaccess.com/4k-space'); /* Replace with your space background image URL */
+            background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max'); /* Space background image */
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -38,7 +38,7 @@
 
         startButton.addEventListener('click', () => {
             interval = setInterval(() => {
-                console.log('Auto-clicking...');
+                startButton.click();
             }, 100); // Adjust the interval as needed
             startButton.style.display = 'none';
             stopButton.style.display = 'inline';
