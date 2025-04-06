@@ -20,12 +20,12 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            border: none;
-            border-radius: 5px;
+                       border-radius: 5px;
             background-color: #007BFF;
             color: white;
         }
-   head>
+    </style>
+</head>
 <body>
     <button id="startButton">Start</button>
     <button id="stopButton" style="display:none;">Stop</button>
@@ -37,15 +37,15 @@
 
         startButton.addEventListener('click', () => {
             interval = setInterval(() => {
-                const targetButton = document.querySelector('button'); // Adjust the selector to target the specific button on the other website
-                if (targetButton) {
+                const targetElement = document.querySelector('button'); // Adjust the selector to target the specific element on the other website
+                if (targetElement) {
                     const event = new MouseEvent('contextmenu', {
                         bubbles: true,
                         cancelable: true,
                         view: window,
                         button: 2 // Right-click
                     });
-                    targetButton.dispatchEvent(event);
+                    targetElement.dispatchEvent(event);
                 }
             }, 100); // Adjust the interval as needed
             startButton.style.display = 'none';
