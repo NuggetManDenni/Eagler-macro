@@ -25,8 +25,7 @@
             background-color: #007BFF;
             color: white;
         }
-    </style>
-</head>
+   head>
 <body>
     <button id="startButton">Start</button>
     <button id="stopButton" style="display:none;">Stop</button>
@@ -40,7 +39,13 @@
             interval = setInterval(() => {
                 const targetButton = document.querySelector('button'); // Adjust the selector to target the specific button on the other website
                 if (targetButton) {
-                    targetButton.click();
+                    const event = new MouseEvent('contextmenu', {
+                        bubbles: true,
+                        cancelable: true,
+                        view: window,
+                        button: 2 // Right-click
+                    });
+                    targetButton.dispatchEvent(event);
                 }
             }, 100); // Adjust the interval as needed
             startButton.style.display = 'none';
@@ -53,9 +58,5 @@
             stopButton.style.display = 'none';
         });
     </script>
-
-    const targetButton = document.querySelector('.my-button');
-
 </body>
 </html>
-
