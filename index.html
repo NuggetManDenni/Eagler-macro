@@ -38,7 +38,10 @@
 
         startButton.addEventListener('click', () => {
             interval = setInterval(() => {
-                startButton.click();
+                const targetButton = document.querySelector('button'); // Adjust the selector to target the specific button on the other website
+                if (targetButton) {
+                    targetButton.click();
+                }
             }, 100); // Adjust the interval as needed
             startButton.style.display = 'none';
             stopButton.style.display = 'inline';
@@ -52,3 +55,4 @@
     </script>
 </body>
 </html>
+
