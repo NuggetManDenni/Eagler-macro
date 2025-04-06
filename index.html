@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Clicker</title>
+    <style>
+        body {
+            background-image: url('https://www.example.com/space-background.jpg'); /* Replace with your space background image URL */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="startButton">Start</button>
+    <button id="stopButton" style="display:none;">Stop</button>
+
+    <script>
+        let interval;
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+
+        startButton.addEventListener('click', () => {
+            interval = setInterval(() => {
+                console.log('Auto-clicking...');
+            }, 100); // Adjust the interval as needed
+            startButton.style.display = 'none';
+            stopButton.style.display = 'inline';
+        });
+
+        stopButton.addEventListener('click', () => {
+            clearInterval(interval);
+            startButton.style.display = 'inline';
+            stopButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
