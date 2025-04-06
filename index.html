@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Clicker</title>
+    <title>Auto Clicker with Popup</title>
     <style>
         body {
             background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max'); /* Space background image */
@@ -15,14 +15,15 @@
             margin: 0;
             color: white;
             font-family: Arial, sans-serif;
-        }
         button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-                       border-radius: 5px;
+            border: none;
+            border-radius: 5px;
             background-color: #007BFF;
             color: white;
+            margin: 10px;
         }
     </style>
 </head>
@@ -36,6 +37,8 @@
         const stopButton = document.getElementById('stopButton');
 
         startButton.addEventListener('click', () => {
+            const newTab = window.open('', '_blank');
+            newTab.document.write('<html><body><h1>Do you want EagleMacro in this tab?</h1></body></html>');
             interval = setInterval(() => {
                 const targetElement = document.querySelector('button'); // Adjust the selector to target the specific element on the other website
                 if (targetElement) {
